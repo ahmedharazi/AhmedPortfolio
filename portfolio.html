@@ -1,74 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
-     <title>portfolio</title>
-     <link rel="stylesheet" href="assets/css/reset.css">
-     <link rel="stylesheet" href="assets/css/style.css">
-
+    <meta charset="UTF-8">
+    <title>Portfolio | Ahmed Al Harazi</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
- 
+
 <body>
-    <header id="masthead"> 
-        <div class="container">
-            <a href="index.html" id="logo"> Ahmed Alharazi</a>
+    <header>
+        <div class="wrapper">
+            <h1>Ahmed Al Harazi</h1>
             <nav>
-                 <a href="index.html">About</a>
-                 <a href="portfolio.html">portfolio</a>
-                <a href="contact.html">contact</a>
+                <ul>
+                    <li>
+                        <a href="index.html">About</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <div id="main-container" class="container">
-        <section class="main-section" >
-            <h1>portfolio</h1>
-        
-            <div class="work">
-              <a href="https://ahmedharazi.github.io/Hangman-Game/"><img src="assets/images/hangman.png"  class="auth-image" alt="hangman" ></a> 
+    <div class="wrapper">
+        <section id="left-column">
+            <h2>My Bootcamp Portfolio</h2>
 
-               <h3>Hangman</h3>
+            <div class="portfolio-item" id="port6">
+                <h4>Friend Finder</h4>
             </div>
-            <div class="work">
-                 <img src="assets/images/rpggame.jpg"  class="auth-image" alt="rpggame">
-
-                 <h3>RPG Game</h3>
+            <div class="portfolio-item" id="port4">
+                <h4>Trian-Time</h4>
             </div>
-            <div class="work">
-                  <img src="assets/images/trivia.jpg" alt="trivia" class="auth-image">
-
-                  <a href="https://ahmedharazi.github.io/Trivial-Trivia/"><h3>Trivia</h3></a>
+            <div class="portfolio-item" id="port5">
+                <h4>City Clippers</h4>
             </div>
-            <div class="work">
-                <img src="assets/images/rutgers.jpg" alt="rutgers" class="auth-image" > 
-
-                 <h3>Rutgers</h3>
+            <div class="portfolio-item" id="port3">
+                <h4>Giphy-API</h4>
             </div>
-             <div class="work">
-                 <img src="assets/images/Rockpaper.png" alt="Rockpaper"class="auth-image" >
-
-                 <h3>Rockpaper</h3>
+            <div class="portfolio-item" id="port1">
+                <h4>Crystals Collector</h4>
             </div>
-        
-        </section>∫∫
-        <section class="sidebar">
-                <div id="connect">
-                    <h2>Connect With Me</h2>
+            <div class="portfolio-item" id="port2">
+                <h4>Totally Trivia</h4>
+            </div>
 
-                    <img src="assets/images/github.png" class="social" alt="github">
-                    <img src="assets/images/linkedin.png" class="social" alt="linkedin">
-                    <img src="assets/images/stackoverflow.png" class="social" alt="stackoverflow">
-                </div>
-        
         </section>
 
+        <aside id="right-column">
+            <h3>Connect with Me</h3>
+            <ul>
+                <li>
 
+                <li><a href="https://github.com/ahmedharazi" target="_blank"><img src="./assets/images/github.png" alt="github" /></a></li>
+                <li><a href="https://stackoverflow.com/users/9754488/ahmed-alharazi" target="_blank"><img src="./assets/images/stackoverflow.png"
+                            alt="stackoverflow" /></a></li>
+                <li><a href="https://www.linkedin.com/in/ahmed-al-harazi-02201b45/" target="_blank"><img src="./assets/images/linkedin.png"
+                            alt="Linkedin" /></a></li>
+            </ul>
+            </ul>
+
+        </aside>
     </div>
+
+    <div class="clearfix"></div>
+
     <footer>
-        <div class="container">
-             &copy; Copyright 2018 Ahmed Alharazi
-        </div>
+        &copy;2018 Ahmed Al Harazi
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $("#port6").on("click", function () {
+            console.log("click it");
+            window.open("https://friend-finder-4795.herokuapp.com/", "Friend-Finder", "toolbar=no,scrollbars=no,resizable=yes,top=50,left=50,width=1200,height=750");
+        }
+        );
+
+        $("#port1").on("click", function () {
+            console.log("click it");
+            window.open("https://ahmedharazi.github.io/Crystal-Collector/", "Crystals", "toolbar=no,scrollbars=no,resizable=yes,top=50,left=50,width=1200,height=750");
+        }
+        );
+
+        $("#port2").on("click", function () {
+            console.log("click it");
+            window.open("https://ahmedharazi.github.io/Trivial-Trivia//", "Trivia-Game", "toolbar=no,scrollbars=no,resizable=yes,top=50,left=50,width=1200,height=750");
+        }
+        );
+
+        $("#port3").on("click", function () {
+            console.log("click it");
+            window.open("https://ahmedharazi.github.io/carz-ajax/", "Giphy-API", "toolbar=no,scrollbars=no,resizable=yes,top=50,left=50,width=1200,height=750");
+        }
+        );
+
+        $("#port4").on("click", function () {
+            console.log("click it");
+            window.open("https://ahmedharazi.github.io/Train-Time/", "Train-Time", "toolbar=no,scrollbars=no,resizable=yes,top=50,left=50,width=1200,height=750");
+        }
+        );
+
+        $("#port5").on("click", function () {
+            console.log("click it");
+            window.open("https://ahmedharazi.github.io/clicky-game/", "Clicky Game", "toolbar=no,scrollbars=no,resizable=yes,top=50,left=50,width=1200,height=750");
+        }
+        );
+
+
+
+
+    </script>
+
 </body>
 
 </html>

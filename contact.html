@@ -1,71 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
-    <title>Contact</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
- </head>
+    <meta charset="UTF-8">
+    <title>Contact | Ahmed Al Harazi</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
 
 <body>
-    <header id="masthead"> 
-        <div class="container">
-            <a href="index.html" id="logo"> Ahmed Alharazi</a>
+    <header>
+        <div class="wrapper">
+            <h1>Ahmed Al Harazi</h1>
             <nav>
-                 <a href="index.html">About</a>
-                 <a href="portfolio.html">portfolio</a>
-                <a href="contact.html">contact</a>
+                <ul>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
-    
-    <div id="main-container" class="container">
-         <section class="main-section" >
-            <h1>Contact</h1>
 
+    <div class="wrapper">
+        <section id="left-column">
+            <h2>Contact Me</h2>
             <form>
-               <ul>   
-                    <li>
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Adam Yab" required="required">
-                    </li>
-                    <li>
-                        <label for="email">Email</label>
-                        <input type="text" name="Email" id="Email" placeholder="expmple@gmail.com" required="required">
-                    </li>
-                    <li>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="Message"required="required"></textarea>
-                    </li>
-                </ul>
-                 <input type="submit" name="submit">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="form-name" placeholder="Enter name">
 
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="form-email" placeholder="Enter email">
+
+                <label for="message">Message:</label>
+                <textarea name="message" id="form-message"></textarea>
+
+                <button type="submit" id="button">Submit Form</button>
             </form>
-         </section>
+        </section>
 
-         <section class="sidebar">
-                <div id="connect">
-                    <h2>Connect With Me</h2>
+        <aside id="right-column">
+            <h3>Connect with Me</h3>
+            <ul>
 
-                    <img src="assets/images/github.png" class="social" alt="github">
-                    <img src="assets/images/linkedin.png" class="social" alt="linkedin">
-                    <img src="assets/images/stackoverflow.png" class="social" alt="stackoverflow">
+                <li><a href="https://github.com/ahmedharazi" target="_blank"><img src="./assets/images/github.png" alt="github" /></a></li>
+                <li><a href="https://stackoverflow.com/users/9754488/ahmed-alharazi" target="_blank"><img src="./assets/images/stackoverflow.png"
+                            alt="stackoverflow" /></a></li>
+                <li><a href="https://www.linkedin.com/in/ahmed-al-harazi-02201b45/" target="_blank"><img src="./assets/images/linkedin.png"
+                            alt="Linkedin" /></a></li>
+            </ul>
+        </aside>
+    </div>
 
+    <div class="clearfix"></div>
 
-
-                </div>
-        
-         </section>
-
-
-     </div>
     <footer>
-        <div class="container">
-             &copy; Copyright 2018 Ahmed Alharazi
-        </div>
-    
+        &copy;2018 Ahmed Alharazi
     </footer>
-    
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAq_8k57U1jXhRMxzx19roowtrtYtBBFmM",
+            authDomain: "responsive-portfolio-ahmed.firebaseapp.com",
+            databaseURL: "https://responsive-portfolio-ahmed.firebaseio.com",
+            projectId: "responsive-portfolio-ahmed",
+            storageBucket: "responsive-portfolio-ahmed.appspot.com",
+            messagingSenderId: "54632613780"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+
+
+        var name = "";
+        var eamil = "";
+        var message = "";
+
+
+        $("#button").on("click", function (event) {
+            // Prevent the page from refreshing
+            event.preventDefault();
+
+            name = $("#form-name").val().trim();
+            email = $("#form-email").val().trim();
+            message = $("#form-message").val().trim();
+
+
+            database.ref().push({
+                name: name,
+                email: email,
+                message: message
+
+            });
+        });
+
+        database.ref().on("value", function (snapshot) { }, function (errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+    </script>
+
+
+
+
+
 </body>
+
+
 </html>

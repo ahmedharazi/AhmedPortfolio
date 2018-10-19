@@ -1,8 +1,18 @@
-# Responsive-Portfolio
 
-In this project i used CSS HTML5  Bootstrap .
+### Responsive-Portfolio
 
-https://ahmedharazi.github.io/Responsive-Portfolio/
-![app image](/assets/images/pic1.png)
-![app image](/assets/images/pic2.png)
+Check it out - https://thomson3914.github.io/Responsive-Portfolio/
 
+I wanted to make my resume responsive, so that it will look good at multiple viewport sizes.
+
+@media screen and (max-width: 980px)
+
+@media screen and (max-width: 768px)
+
+@media screen and (max-width: 640px)
+
+## Technology Used
+
+Html
+
+CSS
